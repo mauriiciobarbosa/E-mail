@@ -1,0 +1,15 @@
+# @author : Mauricio Barbosa
+# @email  : mauriiciobarbosa@gmail.com
+# @date   : 2013-05-20
+
+# Generic Files
+*~
+
+# Php Files
+*_old
+
+# Komodo Files
+*.komodoproject
+
+# Temp Patners
+/*.php

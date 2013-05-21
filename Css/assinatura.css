@@ -1,0 +1,21 @@
+/*
+	@author : Mauricio Barbosa
+	@email  : mauriiciobarbosa@gmail.com
+	@date	: 2013-17-05
+*/
+
+/*            					GENERIC STYLES                                */
+
+span
+{
+		color:black;
+		font-family:"Times New Roman", Georgia, Serif;
+}
+
+/*									   ID									  */
+
+#detalhes { font-size:10pt; }
+
+/*							     PSEUDO CLASS								  */
+
+b.nome { font-size:20px; }

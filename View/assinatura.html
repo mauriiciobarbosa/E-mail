@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Gerador de Assinatura de E-mail</title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<link rel="stylesheet" type="text/css" href="../Css/default.css" />
+	</head>
+	<body>
+		<div class="container">
+			<form id="contactform" class="rounded" method="post" action="../Controller/GeneratorSignature.php">
+				<h3>Assinatura de E-mail</h3>
+
+				<div class="field">
+					<label for="dir">Diretório:</label>
+				  	<input type="text" class="input" name="dir" id="dir" />
+					<p class="hint">Informe o diretório para onde serão baixado os arquivos.</p>
+				</div>
+
+				<div class="field">
+					<label for="nome">Nome:</label>
+				  	<input type="text" class="input" name="nome" id="nome" />
+					<p class="hint">Informe o nome.</p>
+				</div>
+
+				<div class="field">
+					<label for="cargo">Cargo:</label>
+				  	<input type="text" class="input" name="cargo" id="cargo" />
+					<p class="hint">Informe o cargo.</p>
+				</div>
+
+				<div class="field">
+					<label for="depto">Depto:</label>
+				  	<input type="text" class="input" name="depto" id="depto" />
+					<p class="hint">Informe o departamento.</p>
+				</div>
+
+				<div class="field">
+					<label for="email">Email:</label>
+				  	<input type="text" class="input" name="email" id="email" />
+					<p class="hint">Informe o endereço de e-mail.</p>
+				</div>
+
+				<div class="field">
+					<label for="tel1">Tel1:</label>
+				  	<input type="text" class="input" name="tel1" id="tel1" />
+					<p class="hint">Informe o telefone.</p>
+				</div>
+
+				<div class="field">
+					<label for="tel2">Tel2:</label>
+				  	<input type="text" class="input" name="tel2" id="tel2" />
+					<p class="hint">Caso necessite, informe um 2º numero de telefone.</p>
+				</div>
+
+				<div class="field">
+					<label for="fax">Fax:</label>
+				  	<input type="text" class="input" name="fax" id="fax" />
+					<p class="hint">Informe o Fax.</p>
+				</div>
+
+				<div class="field">
+					<label for="nextel">Nextel:</label>
+				  	<input type="text" class="input" name="nextel" id="nextel" />
+					<p class="hint">Informe o Nextel.</p>
+				</div>
+				
+				<input type="reset" name="limpar" class="button" value="limpar" />
+				<input style="margin-right:10px" type="submit" name="ok"  class="button" value="ok" />
+			</form>
+		</div>
+		<div>
+			<img src="../Image/logo.gif" />
+			<img src="../Image/arvore.gif" />
+			<img src="../Image/e-mail.gif" />
+			<img src="../Image/fax.gif" />
+			<img src="../Image/nextel.png" />
+			<img src="../Image/telefone.gif" />
+			<img src="../Image/logo_service.gif" />
+		</div>
+	</body>
+</html>
