@@ -28,12 +28,12 @@ class Funcionario
 			}
 			else
 			{
-				echo "Erro: metodo informado nao existe";
+				throw new Exception("Erro: metodo informado nao existe");
 			}
 		}
 		else
 		{
-			echo "Erro: propriedade informada nao existe";
+			throw new Exception("Erro: metodo informado nao existe");
 		}
 	}
 }

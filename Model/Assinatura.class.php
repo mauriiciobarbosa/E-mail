@@ -13,20 +13,34 @@ class Assinatura
 	
 	public function setParams($data)
 	{
-		$this->directory = empty($data['dir']) ? 'file:///home/user/assinatura/' : 'file://' . $data['dir'];
-		$this->funcionario->setNome($data['nome'])
-						  ->setCargo($data['cargo'])
-						  ->setSetor($data['depto'])
-						  ->setEmail($data['email'])
-						  ->setFax($data['fax'])
-						  ->setNextel($data['nextel'])
-						  ->setTelefone1($data['tel1'])
-						  ->setTelefone2($data['tel2']);
+		$this->directory = empty($data['dir']) ? 'file:///home/user/assinatura/image/' : 'file://' . $data['dir'] . 'image/';
+		
+		try
+		{
+			$this->funcionario->setNome($data['nome'])
+							  ->setCargo($data['cargo'])
+							  ->setSetor($data['depto'])
+							  ->setEmail($data['email'])
+							  ->setFax($data['fax'])
+							  ->setNextel($data['nextel'])
+							  ->setTelefone1($data['tel1'])
+							  ->setTelefone2($data['tel2']);
+		}
+		catch(Exception $e)
+		{
+			echo "Houve um erro ao gerar assinatura. Por favor, entre em contato
+				  com o administrador do sistema.";
+			exit(-1);
+		}
 	}
 	
 	public function show()
 	{
-		echo '<html>' . $this->header() . $this->body() . '</html>';
+		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+			  <html xmlns="http://www.w3.org/1999/xhtml">'
+			  . $this->header()
+			  . $this->body()
+			  . '</html>';
 	}
 	
 	private function header()
@@ -37,8 +51,8 @@ class Assinatura
 							<meta http-equiv=\'Content-Type\' content=\'text/html; charset=utf-8\'>
 							<style>
 								span {
-										color:black;
-										font-family:"Times New Roman", Georgia, Serif;
+									color:black;
+									font-family:"Times New Roman", Georgia, Serif;
 								}
 								
 								#detalhes { font-size:10pt; }
@@ -55,7 +69,7 @@ class Assinatura
 		$body =		'
 					<body>
 						<span>
-							<a href="www.ferimport.com.br">
+							<a href="http://www.ferimport.com.br">
 								<img src="' . $this->directory . 'logo.gif" />
 							</a><br />
 							<b class="nome">' . $this->funcionario->getNome() . '</b> <br />
@@ -66,27 +80,32 @@ class Assinatura
 		 	$body .=		$this->funcionario->getSetor() . '<br />';
 		}
 		
-		$body .=			'<span id="detalhes">
+		$body .=			'
+							 <span id="detalhes">
 								<img src="' . $this->directory . 'telefone.gif" />'
 								. $this->funcionario->getTelefone1() . '<br />';	
 	
 		if ( !is_null($this->funcionario->getTelefone2()) ) 
 		{
-			$body .=   			'<img src="' . $this->directory . 'telefone.gif" />'
+			$body .=   			'
+								<img src="' . $this->directory . 'telefone.gif" />'
 								. $this->funcionario->getTelefone2() . '<br />';
 		}
 		if ( !is_null($this->funcionario->getFax()) )
 		{
-			$body .=	   		'<img src="' . $this->directory . 'fax.gif" />
-								&nbsp;&nbsp;' . $this->funcionario->getFax() . '<br />';
+			$body .=	   		'
+								<img src="' . $this->directory . 'fax.gif" />&nbsp;&nbsp;'
+								. $this->funcionario->getFax() . '<br />';
 		}
 		if ( !is_null($this->funcionario->getNextel()) )
 		{
-			$body .=   			'<img src="' . $this->directory . 'nextel.png" />
-								&nbsp;&nbsp;&nbsp;' . $this->funcionario->getNextel() . '<br />';
+			$body .=   			'
+								<img src="' . $this->directory . 'nextel.png" />&nbsp;&nbsp;&nbsp;'
+								. $this->funcionario->getNextel() . '<br />';
 		}
 			
-		$body .=				'<img src="' . $this->directory . 'e-mail.gif" />
+		$body .=				'
+								<img src="' . $this->directory . 'e-mail.gif" />
 								&nbsp;<a href="mailto:' . $this->funcionario->getEmail() . '" >'
 									. $this->funcionario->getEmail() .
 								'</a>

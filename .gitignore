@@ -13,3 +13,4 @@
 
 # Temp Patners
 /*.php
+!index.php
